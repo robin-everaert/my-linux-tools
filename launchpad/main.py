@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/home/kibs/gitHub/my-linux-tools/launchpad/env/bin/python
 from ttkbootstrap import Style
 from ttkbootstrap.widgets import Button
 import tkinter as tk
@@ -6,12 +6,12 @@ import os
 
 # Create the main window
 root = tk.Tk()
-root.tk.call("tk", "scaling", 1.0)
 root.title("")
+root.tk.call("tk", "scaling", 1.0)
 root.attributes("-topmost", True) # z-index
 
 # Define the size of the window (code by chat GPT)
-window_width = 150  
+window_width = 160  
 window_height = 280 
 root.update_idletasks()  
 screen_width = root.winfo_screenwidth()
@@ -59,17 +59,19 @@ def create_button(parent, text, path):
 cur_button_frame = tk.Frame(root)
 cur_button_frame.pack(pady=10)
 
-btn1 = create_button(cur_button_frame, "DOWNLOAD", "~/Downloads")
-btn2 = create_button(cur_button_frame, "SCREENSHOT", "~/Pictures/Screenshots")
-btn3 = create_button(cur_button_frame, "GITHUB", "~/gitHub")
-btn4 = create_button(cur_button_frame, "NS CUR", "~/work/nutrisolution/current")
-btn5 = create_button(cur_button_frame, "NS SERV 1", "~/work/nutrisolution/servers/server_1/www")
-btn6 = create_button(cur_button_frame, "NS SERV 2", "~/work/nutrisolution/servers/server_2/www")
-btn7 = create_button(cur_button_frame, "WIP", "~/work/wip")
+button_data = [
+    ("ROOT", "/"),
+    ("DOWNLOAD", "~/Downloads"),
+    ("SCREENSHOT", "~/Pictures/Screenshots"),
+    ("GITHUB", "~/gitHub"),
+    ("NS CUR", "~/work/nutrisolution/current"),
+    ("NS SERV 1", "~/work/nutrisolution/servers/server_1/www"),
+    ("NS SERV 2", "~/work/nutrisolution/servers/server_2/www"),
+    ("WIP", "~/work/wip"),
+]
 
-# Pack the buttons
-buttons = [btn1, btn2, btn3, btn4, btn5, btn6, btn7]
-for btn in buttons:
+for text, path in button_data:
+    btn = create_button(cur_button_frame, text, path)
     btn.pack(side="top", pady=5)
 
 # Launch the application
