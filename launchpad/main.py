@@ -63,11 +63,11 @@ button_data = [
     ("ROOT", "/"),
     ("DOWNLOAD", "~/Downloads"),
     ("SCREENSHOT", "~/Pictures/Screenshots"),
-    ("GITHUB", "~/gitHub"),
-    ("NS CUR", "~/work/nutrisolution/current"),
-    ("NS SERV 1", "~/work/nutrisolution/servers/server_1/www"),
-    ("NS SERV 2", "~/work/nutrisolution/servers/server_2/www"),
-    ("WIP", "~/work/wip"),
+    ("GITHUB", "~/"),
+    ("NS CUR", "~/"),
+    ("NS SERV 1", "~/"),
+    ("NS SERV 2", "~/"),
+    ("WIP", "~/"),
 ]
 
 for text, path in button_data:
